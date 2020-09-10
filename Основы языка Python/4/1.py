@@ -6,7 +6,7 @@
 необходимо запускатьскрипт с параметрами."""
 
 from sys import argv
-впо
+
 script_name, hours, rate, prize = argv
 print(script_name)
 print((int(hours) * float(rate)) + float(prize))
