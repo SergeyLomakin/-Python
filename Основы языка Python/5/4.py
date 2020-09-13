@@ -19,5 +19,5 @@ with open("text.txt", "r") as f_obj:
         f_out.append(words[i[0]] + '  ' + i[1])
     print(f_out)
 
-with open("text.txt", "w") as new_obj:
+with open("text_2.txt", "w") as new_obj:
     new_obj.writelines(f_out)
