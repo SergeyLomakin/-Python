@@ -15,7 +15,7 @@ import shutil
 import sys
 
 subj = {}
-with open('text.txt', 'r', encoding='utf-8') as f_obj:
+with open('text_6.txt', 'r', encoding='utf-8') as f_obj:
     shutil.copyfileobj(f_obj, sys.stdout)
     f_obj.seek(0)
     print()
