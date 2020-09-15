@@ -11,4 +11,22 @@
 Пример словаря:
 {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}"""
 
+import shutil
+import sys
 
+subj = {}
+with open('text.txt', 'r', encoding='utf-8') as f_obj:
+    shutil.copyfileobj(f_obj, sys.stdout)
+    f_obj.seek(0)
+    print()
+    for line in f_obj:
+        line = (line.replace('—', '0').replace('.', '').replace(':', '')
+                .replace('(л)', '').replace('(пр)', '').replace('(лаб)', ''))
+        subject, lecture, practice, lab = line.split()
+        subj[subject] = int(lecture) + int(practice) + int(lab)
+    print(f'Общее количество часов по предмету - \n {subj}')
+
+"""
+Вопрос: как можно заменить строку с 6 replace? Создавал список, но
+получал ошибку, что 1ый аргумент в replace не может быть сриском.
+"""
