@@ -17,4 +17,27 @@
 {"average_profit": 2000}]
 Подсказка: использовать менеджеры контекста."""
 
+import shutil
+import sys
+import json
 
+firm = {}
+with open('text.txt', 'r', encoding='utf-8') as f_obj:
+    shutil.copyfileobj(f_obj, sys.stdout)
+    f_obj.seek(0)
+    scr = 0
+    average_profit = 0
+    for line in f_obj:
+        name, own, proceeds, costs = line.split()
+        if int(proceeds) > int(costs):
+            profit = int(proceeds) - int(costs)
+            average_profit = average_profit + profit
+            firm[name] = profit
+            scr += 1
+        else:
+            profit = int(proceeds) - int(costs)
+            firm[name] = profit
+    firm['average_profit'] = average_profit / scr
+
+with open('firm.json', 'w+') as f_js:
+    json.dump(firm, f_js)
