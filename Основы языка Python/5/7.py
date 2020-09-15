@@ -17,14 +17,10 @@
 {"average_profit": 2000}]
 Подсказка: использовать менеджеры контекста."""
 
-import shutil
-import sys
 import json
 
 firm = {}
 with open('text_7.txt', 'r', encoding='utf-8') as f_obj:
-    shutil.copyfileobj(f_obj, sys.stdout)
-    f_obj.seek(0)
     scr = 0
     average_profit = 0
     for line in f_obj:
