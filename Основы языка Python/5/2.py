@@ -3,7 +3,7 @@
 выполнить подсчет количества строк,
 количества слов в каждой строке."""
 
-with open('text.txt', 'r+') as f_obj:
+with open('text_2.txt', 'r+') as f_obj:
     lines = ['string one\n', 'string_2\n', 'string tree три']
     f_obj.writelines(lines)
     f_obj.seek(0)
