@@ -5,7 +5,7 @@
 Выполнить подсчет средней величины дохода сотрудников."""
 
 
-with open('text.txt', 'r+') as f_obj:
+with open('text_3.txt', 'r+') as f_obj:
     staff = ['Фёдоров\n', '57000\n', 'Андропов\n', '120000\n', 'Андронов\n', '12000\n', 'Лютиков\n', '19000']
     f_obj.writelines(staff)
     f_obj.seek(0)
