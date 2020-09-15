@@ -3,7 +3,7 @@
 Программа должна подсчитывать сумму чисел в файле
 и выводить ее на экран."""
 
-with open(r'text.txt', 'w+') as sum_obj:
+with open(r'text_5.txt', 'w+') as sum_obj:
     user_in = input('Введите числа через пробел: ')
     sum_obj.writelines(user_in.replace(' ', '\n'))
     sum_obj.seek(0)
