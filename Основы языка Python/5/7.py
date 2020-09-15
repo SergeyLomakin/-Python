@@ -27,8 +27,10 @@ with open('text.txt', 'r', encoding='utf-8') as f_obj:
     f_obj.seek(0)
     scr = 0
     average_profit = 0
+    
     for line in f_obj:
         name, own, proceeds, costs = line.split()
+        
         if int(proceeds) > int(costs):
             profit = int(proceeds) - int(costs)
             average_profit = average_profit + profit
@@ -37,6 +39,7 @@ with open('text.txt', 'r', encoding='utf-8') as f_obj:
         else:
             profit = int(proceeds) - int(costs)
             firm[name] = profit
+            
     firm['average_profit'] = average_profit / scr
 
 with open('firm.json', 'w+') as f_js:
