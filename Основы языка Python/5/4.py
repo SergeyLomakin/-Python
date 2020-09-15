@@ -13,10 +13,10 @@ words = {
 }
 f_out = []
 
-with open("text_4.txt", "r") as f_obj:
+with open("text_4.txt", "r", encoding='utf-8') as f_obj:
     for i in f_obj:
         i = i.split(' ', 1)
-        f_out.append(words[i[0]] + '  ' + i[1])
+        f_out.append(words[i[0]] + ' ' + i[1])
     print(f_out)
 
 with open("text_4_2.txt", "w") as new_obj:
