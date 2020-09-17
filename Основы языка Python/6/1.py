@@ -9,4 +9,25 @@ color (цвет) и метод running (запуск). Атрибут реали
 Задачу можно усложнить, реализовав проверку порядка режимов, и при его нарушении
 выводить соответствующее сообщение и завершать скрипт."""
 
+from time import sleep
+import turtle
 
+
+class TrafficLight:
+    __color = ['red', 'yellow', 'green']
+
+    def running(self):
+        while True:
+            for i in TrafficLight.__color:
+                if i == 'red' or i == 'green':
+                    turtle.begin_fill()
+                    print(turtle.color(i), i)
+                    sleep(7)
+                else:
+                    turtle.begin_fill()
+                    print(turtle.color(i), i)
+                    sleep(2)
+
+
+res = TrafficLight()
+res.running()
