@@ -9,3 +9,22 @@
 передать данные, проверить значения атрибутов, вызвать методы экземпляров)."""
 
 
+class Worker:
+    def __init__(self, name, surname, position, wage, bonus):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self._income = {"wage": wage, "bonus": bonus}
+
+
+class Position(Worker):
+    def get_full_name(self):
+        return f'Имя сотрудника: {self.name} {self.surname}'
+
+    def get_total_income(self):
+        return f'Доход сотрудника составляет: {sum(self._income.values())}'
+
+
+a = Position('Dmitriy', 'Petrov', 'Designer', 80000, 40000)
+print(a.get_full_name())
+print(a.get_total_income())
